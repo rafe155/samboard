@@ -1,8 +1,48 @@
 <script>
-function giggles_josiah() {
-	var audio = new Audio('giggles_josiah.wav');
+function giggles_josiah(file) {
+	var audio = new Audio(file);
 	audio.play();
 };
+
+function main(){
+files = ['giggles_josiah', 
+         'show_some_respect',
+         'nooo',
+         'ashley',
+         'cool_cool',
+         'it_stinks',
+         'podcast',
+         'scott',
+         'sick',
+         'soo_good',
+         'yeah_man',
+         'yeah_yeah'];
+var docFrag = document.createDocumentFragment();
+for (var i=0; i < files.length ; i++){
+     var elem = document.createElement('input');
+     elem.type = 'button';
+     elem.value = files[i];
+     elem.onclick = function audio() {
+                            console.log(this.value + '.wav')
+	                          var audio = new Audio(this.value + '.wav');
+	                          audio.play();
+                      };
+     docFrag.appendChild(elem);
+}
+document.body.appendChild(docFrag);
+
+}
 </script>
 
-<button onclick='giggles_josiah();'> giggles josiah </button>
+
+
+<body onload="main()">
+
+
+
+
+</body>
+
+
+
+
